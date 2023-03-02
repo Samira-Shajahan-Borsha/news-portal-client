@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
 
 const Header = () => {
+
+    const { user } = useContext(AuthContext);
+
     return (
         <Navbar collapseOnSelect className='mb-4 sticky-top' expand="lg" bg="light" variant="light">
             <Container>
@@ -29,9 +35,21 @@ const Header = () => {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
+                        <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
+                            {
+                                user?.photoURL
+                                    ?
+                                    <Image
+                                        roundedCircle
+                                        src={user?.photoURL}
+                                        className='me-3'
+                                        style={{ height: '30px' }}
+                                    ></Image>
+                                    :
+                                    <FaUserAlt></FaUserAlt>
+                            }
+
                         </Nav.Link>
                     </Nav>
                     <div className='d-lg-none d-block'>
