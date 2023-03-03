@@ -8,7 +8,7 @@ const News = () => {
     const news = useLoaderData();
 
     const { title, image_url, details, category_id } = news;
-    console.log(news);
+    
     return (
         <Card>
             <Card.Img variant="top" src={image_url} />
