@@ -11,8 +11,6 @@ const Register = () => {
 
     const [accepted, setAccepted] = useState(false);
 
-    const [disabled, setDisabled] = useState(true);
-
     const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
 
     const handleSubmit = event => {

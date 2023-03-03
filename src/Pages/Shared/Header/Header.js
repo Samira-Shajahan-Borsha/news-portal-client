@@ -55,7 +55,7 @@ const Header = () => {
                                     </>
                             }
                         </>
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Link to="/profile">
                             {
                                 user?.photoURL
                                     ?
@@ -69,7 +69,7 @@ const Header = () => {
                                     <FaUserAlt></FaUserAlt>
                             }
 
-                        </Nav.Link>
+                        </Link>
                     </Nav>
                     <div className='d-lg-none d-block'>
                         <LeftSideNav></LeftSideNav>
