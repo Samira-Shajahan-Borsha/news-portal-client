@@ -63,7 +63,7 @@ const Header = () => {
                                         roundedCircle
                                         src={user?.photoURL}
                                         className='me-3'
-                                        style={{ height: '30px' }}
+                                        style={{ height: '30px', width: '30px' }}
                                     ></Image>
                                     :
                                     <FaUserAlt></FaUserAlt>
