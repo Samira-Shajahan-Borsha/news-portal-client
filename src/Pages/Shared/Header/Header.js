@@ -25,51 +25,38 @@ const Header = () => {
                 <Navbar.Brand ><Link to='/'>News Portal</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#features">All News</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
-                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                    </Nav>
-                    <Nav>
-                        <>
-                            {
-                                user?.uid ?
-                                    <>
-                                        <span> {user?.displayName} </span>
-                                        <Button variant='light' onClick={handleLogOut}>Log Out</Button>
-                                    </>
-                                    :
-                                    <>
-                                        <Link to='/login'>Login</Link>
-                                        <Link to='/register'>Register</Link>
-                                    </>
-                            }
-                        </>
-                        <Link to="/profile">
-                            {
-                                user?.photoURL
-                                    ?
-                                    <Image
-                                        roundedCircle
-                                        src={user?.photoURL}
-                                        className='me-3'
-                                        style={{ height: '30px', width: '30px' }}
-                                    ></Image>
-                                    :
-                                    <FaUserAlt></FaUserAlt>
-                            }
+                    <Nav className='ms-auto'>
+                        <div>
+                            <>
+                                {
+                                    user?.uid ?
+                                        <>
+                                            <span className='me-3'> {user?.displayName} </span>
+                                            <Button variant='light' className='me-3' onClick={handleLogOut}>Log Out</Button>
+                                        </>
+                                        :
+                                        <>
+                                            <Link to='/login' className='me-3 text-decoration-none'>Login</Link>
+                                            <Link to='/register' className='me-3 text-decoration-none'>Register</Link>
+                                        </>
+                                }
+                            </>
+                            <Link to="/profile">
+                                {
+                                    user?.photoURL
+                                        ?
+                                        <Image
+                                            roundedCircle
+                                            src={user?.photoURL}
+                                            className='me-3'
+                                            style={{ height: '30px', width: '30px' }}
+                                        ></Image>
+                                        :
+                                        <FaUserAlt></FaUserAlt>
+                                }
 
-                        </Link>
+                            </Link>
+                        </div>
                     </Nav>
                     <div className='d-lg-none d-block'>
                         <LeftSideNav></LeftSideNav>
