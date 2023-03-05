@@ -16,6 +16,7 @@ const BrandCarousel = () => {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
+                    style={{ height: '148px' }}
                     src={Brand2}
                     alt="Second slide"
                 />

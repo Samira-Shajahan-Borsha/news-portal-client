@@ -8,7 +8,7 @@ const Home = () => {
 
     return (
         <div>
-            <h1>This is Home Component : {allNews.length}</h1>
+            <h1>News: {allNews.length}</h1>
             {
                 allNews.map(news => <NewsSummaryCard
                     key={news._id}
